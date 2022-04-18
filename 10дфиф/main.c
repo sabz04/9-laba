@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <time.h>
 #include <malloc.h>
@@ -10,35 +11,42 @@
 struct book {
 	char book_name[50];
 	char author[50];
-	int count;
+	int year;
 } book;
-
+struct T {
+	char name[50];
+	char fam[50];
+};
 int main() {
 	setlocale(LC_ALL, "");
-
 	struct book b[3];
 
 	strcpy(b[0].book_name, "Гуливер");
-	strcpy(b[0].author, "Зульфат");
-	strcpy(b[0].count, 2);
+	strcpy(b[0].author, "Zulfat");
+	b[0].year = 2004;
 
 	strcpy(b[1].book_name, "Жульбек");
-	strcpy(b[1].author, "Андрей");
-	strcpy(b[1].count, 6);
+	strcpy(b[1].author, "Shakal");
+	b[1].year = 1984;
 
 	strcpy(b[2].book_name, "Книту каи");
-	strcpy(b[2].author, "Алтынбек");
-	strcpy(b[2].count, 3);
+	strcpy(b[2].author, "Diana");
+	b[2].year = 2019;
 	
-	printf("Введите автора:\n ");
-	char sym[40];
-	scanf_s("%s", &sym);
-	for (int i = 0; i < 2; i++) {
-		if (sym == b[i].author) {
-			printf("Кол-во: %d", b[i].count);
+	printf("Введите автора: ");
+	char sym[50];
+	int counter = 0;
+	scanf("%s", &sym);
+	for (int i = 0; i < 3; i++) {
+		if (strcmp(sym, b[i].author) == 0) {
+			counter++;
 		}
 	}
-	
-	
+	printf("Кол-во книг: %d", counter);
+	struct T t[4];
+	for (int i = 0; i < 4; i++) {
+		strcpy(t[i].name, "Diana");
+		strcpy(t[i].fam, "Sabirova");
+	}
 	return 0;
 }

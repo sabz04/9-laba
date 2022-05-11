@@ -17,6 +17,13 @@ struct T {
 	char name[50];
 	char fam[50];
 };
+struct people {
+	char fullname[20];
+	int age;
+};
+
+typedef struct people T1;
+
 int main() {
 	setlocale(LC_ALL, "");
 	struct book b[3];
@@ -43,10 +50,20 @@ int main() {
 		}
 	}
 	printf("Кол-во книг: %d", counter);
-	struct T t[4];
+
+
+	T1 Mas[4] = { "",0,"",0, "",0, "",0 };
 	for (int i = 0; i < 4; i++) {
-		strcpy(t[i].name, "Diana");
-		strcpy(t[i].fam, "Sabirova");
+		printf("\nВведите фамилию: ");
+		scanf("%s", &Mas[i].fullname);
+		printf("\nВведите возраст: ");
+		scanf("%d", &Mas[i].age);
+		printf("\n");
 	}
+	for (int i = 0; i < 4; i++) {
+		printf("\nфамилия: %s\n Возраст: %d", Mas[i].fullname, Mas[i].age);
+	}
+
+
 	return 0;
 }

@@ -24,9 +24,9 @@ int main()
 	setlocale(LC_ALL, "");
 	int m = func_1_4(20);
 	printf("1.4: %d\n", m);
-	printf("2.4:%d ", Function(func_1_4, func_2_4_dop, 10, 20));
+	printf("2.4:%d\n ", Function(func_1_4, func_2_4_dop, 10, 20));
 	printf("3:%d ", Function1(func_1_4, func_2_4_dop, 10, 20));
-	int a = 0, b = 0, tmp = 0;;
+	int a = 0, b = 0, tmp = 0;
 	
 	printf("\n¬ведите а =");
 	scanf_s("%d", &a);
